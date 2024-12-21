@@ -1,7 +1,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>4</title>
     <style>
         body {
@@ -11,33 +11,53 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-size: contain; /* 调整背景图片大小以适应容器 */
+            background-repeat: no-repeat; /* 确保背景图片不重复 */
+            background-position: center; /* 将背景图片居中 */
         }
         .confirmation-box {
             text-align: center;
+            height: 50%;
         }
         .confirmation-box p {
             margin-bottom: 20px;
             font-size: 18px;
         }
         .confirmation-box button {
-            padding: 10px 20px;
+            padding: 20px 40px;
             margin: 0 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: white;
+            background-color: antiquewhite;
         }
-        .confirmation-box button:hover {
-            background-color: #e0e0e0;
-        }
+
     </style>
 </head>
 <body>
 <div class="confirmation-box">
-    <p>是否确认生成？</p>
+    <h1>是否确认生成？</h1>
     <button onclick="location.href='5.html';">Yes</button>
     <button onclick="">No</button>
 </div>
 </body>
 </html>
+
+
+<script>
+    //边框选择
+    let back_list = ['34df675beb98e9a08dd32bb2db91458.png',
+        '91b17cfcf1827038136b0bf51c221d5.png',
+        '665432b82acd6ca5d4f1aab78345354.png',
+        'a816e20264e6bdce33b81cc57da5bc0.png',
+        'b911e204d70de094cf0a9b169e66946.png',
+        'd89fc421792861f8c9080ba373ec227.png',
+        'dad440bdbb3526561f993fa766142fd.png',
+        'dbbef5c77c859c4849eb3e48b06ce61.png',
+        'eff185b54051fdd82fa1e90f9e183a2.png']//边框图
+    let index = 0//选择的边框序号,由其他页面传入，此处测试为0
+    window.onload = function() {
+        let url = '设计组新年贺卡/边框/' + back_list[index];
+        document.body.style.backgroundImage = 'url(' + url + ')';
+    };
+</script>
